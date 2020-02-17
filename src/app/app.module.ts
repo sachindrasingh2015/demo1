@@ -10,6 +10,9 @@ import { StudentComponent } from './student.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { StudentDetailsComponent } from './student-details.component';
 import { StudentRegistrationComponent } from './student-registration.component';
+import { NestedformArrayComponent } from './Form/nestedform-array/nestedform-array.component';
+import { DynamicRowComponent } from './form/dynamic-row/dynamic-row.component';
+import { RadioCheckboxComponent } from './Radio/radio-checkbox/radio-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { StudentRegistrationComponent } from './student-registration.component';
     StudentComponent,
     PageNotFoundComponent,
     StudentDetailsComponent,
-    StudentRegistrationComponent
+    StudentRegistrationComponent,
+    NestedformArrayComponent,
+    DynamicRowComponent,
+    RadioCheckboxComponent
   ],
   imports: [
     BrowserModule,

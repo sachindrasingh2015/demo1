@@ -1,0 +1,47 @@
+<h1>Radio button and check box</h1>
+
+<form #regform="form" (ngSubmit)="submit(regform)">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input name="uname" [(ngModel)]="User.username" required #uname="ngModel">
+        <div *ngIf="uname.invalid">
+          name is required
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input type="radio" value="male" name="gender" [(ngModel)]="User.gender" required #gender="ngModel">Male
+        <input type="radio" value="female" name="gender" [(ngModel)]="User.gener" required #gender="ngModel">Female
+        <div *ngIf="gender.invalid">
+          Gender required
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Are you Married</td>
+      <td>
+        <input type="checkbox" name="married" [(ngModel)]="User.isMarried">
+      </td>
+    </tr>
+    <tr>
+      <td>T & C</td>
+      <td>
+        <input type="checkbox" name="isTCAccepted" [(ngModel)]="user.isTCAccepted" readonly #isTCAccepted="ngModel">
+        <div *ngIf="isTCAccepted.invalid">
+          isTCAccepted is mandatory
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='2'>
+        <button>submit</button>
+        <button type="button" (click)="setdefault()"> set default</button>
+        <button type="button" (click)="setreset(regform)">reset</button>
+      </td>
+    </tr>
+  </table>
+</form>

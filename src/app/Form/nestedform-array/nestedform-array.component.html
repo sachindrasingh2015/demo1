@@ -1,0 +1,11 @@
+<h2>this is nested array</h2>
+<form  [formGroup]='form' (ngSubmit)="onsubmit()">
+    <div formArrayName="ContactNos">
+      <div  *ngFor="let item of form.controls.ContactNos.controls; index as i">
+        <input [formControlName]="i" placeholder="contact no">
+      </div>
+    </div>
+    <button>submit</button>
+</form>
+<button (click)='add()'>Add more</button>
+<button (click)="set()">set reset</button>

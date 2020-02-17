@@ -3,9 +3,10 @@
 <div class="container">
   <div class="row">
     <div class="form-bg">
-      <form [formGroup]='signup' (ngSubmit)='postdata(signup)'>
+      <form [formGroup]='signupForm' (ngSubmit)='postdata(signupForm)'>
         <div class="form-group">
           <input type='text' formControlName='fname' placeholder="FIRST NAME" >
+          <span *ngIf="signupForm.controls['fname'].hasError('required')">name is required</span>
         </div>
         <div class="form-group">
           <input type='text' formControlName='lname' placeholder="Last name">
@@ -17,7 +18,11 @@
           <input type='password' formControlName='password' placeholder="password">
         </div>
         <div>
-          <button type="submit" id="postdata" [disabled]='!signup.valid'>submit</button>
+          <button class="btn btn-primary" type="submit" id="postdata" [disabled]='!signupForm.valid'>submit</button>
+          &nbsp;
+          <button type="reset" (click)="resetForm()" >reset</button>
+          &nbsp;
+          <button type="button" (click)="filldata()" >Set data</button>
         </div>
       </form>
     </div>
