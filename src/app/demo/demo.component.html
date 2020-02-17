@@ -1,0 +1,66 @@
+<p>demo works!</p>
+
+<!-- this is ngstyle  -->
+<!-- <ul *ngFor="let item of student">
+  <li [ngStyle]="{'color': getcolor(item.country)}">
+{{item.name}} - {{item.gender}} - ({{item.country}})
+  </li>
+</ul> -->
+
+<input [(ngModel)]="data"><br>
+enter your name : {{data}}
+
+  <h1>Employee Name: {{firstname+' '+lastname}}</h1>
+<h1>add:{{num1+num2}}</h1>
+<span [innerHTML]="firstname"></span>
+<img [src]="'https://angular.io/assets/images/logos/angular/angular.svg'" [height]='100'>
+<ul *ngFor="let group of people">
+<li>{{group.country}}</li>
+<ul *ngFor="let person of group.people" [ngClass]="colorcss('mode')">
+  <li>{{person.name}}</li>
+</ul>
+</ul>
+<!--
+<table [attr.border]="bdr" height="100" width="400">
+  <tr>
+    <td [attr.colSpan]="cols">
+      student details
+    </td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>name</td>
+    <td>age</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>sachin</td>
+    <td>23</td>
+  </tr>
+</table> -->
+
+<table>
+  <tr>
+    <th>id</th>
+  <th>name</th>
+  <th>gender</th>
+  <th>role</th>
+</tr>
+<tr *ngFor="let item of employ">
+  <td>{{item.id}}</td>
+  <td>{{item.name | uppercase | mypipe:item.gender}}</td>
+  <th>{{item.gender}}</th>
+  <th>{{item.country | uppercase}}</th>
+</tr>
+</table>
+
+<div>
+  dob: {{dob | date:"medium" | uppercase}}<br>
+  salary: {{salary | currency:"USD":true}}<br>
+  fulldate : {{dob | date:"fullDate" | uppercase}}<br>
+  data: {{data | uppercase}}<br>
+  {{currentdate | date:"medium" | uppercase}}<br>
+  number: {{mynum | percent:'2.4-8'}}<br>
+  decimal: {{mynum | number}}<br>
+  <!-- employee: {{employee | slice:1 | json}}<br> -->
+</div>

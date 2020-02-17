@@ -1,0 +1,26 @@
+<h1>TEMPLATE DRIVEN FORM</h1>
+<div class="container">
+  <div class="row">
+    <div class="form-bg">
+      <form #regForm='ngForm' (ngSubmit)="Register(regForm)" >
+        <div class="text-center">
+          Registration page
+        </div>
+        <div class="form-group">
+          <input type='text' class="form-control" placeholder="First Name" name="firstname" required ngModel>First Name
+        </div>
+        <div>
+          <input type="text" class="form-control" placeholder="Last Name" name="lastname" required ngModel>Last Name
+        </div>
+        <div>
+          <input type="text" class="form-control" placeholder="email" name="email" email required ngModel #email="ngModel" >
+          <span class="text-danger" *ngIf="email.touched && !email.valid">please enter vaild email</span>
+        </div>
+        <br>
+        <div class="align-centre">
+          <button type="submit" class="btn btn-primary" id="Register" [disabled]='!regForm.valid' >submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
